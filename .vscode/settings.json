@@ -1,4 +1,6 @@
 {
   "editor.wordWrap": "on",
-  "prettier.printWidth": 110
+  "prettier.printWidth": 110,
+  "cSpell.words": ["Posteria"],
+  "editor.formatOnSave": true
 }

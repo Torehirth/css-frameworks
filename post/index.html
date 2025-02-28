@@ -8,10 +8,10 @@
     <!-- SEO meta tags -->
     <meta
       name="description"
-      content="View and manage your profile on Posteria. Look at your posts, and see who follows you or you're following." />
+      content="See the latest post on Posteria! Engage with likes and comments, and explore more from the creator." />
     <meta
       name="keywords"
-      content="Posteria, Social media, platform, application, CSS, Frameworks, Assignment, Tore Hirth, Tore M. Hirth" />
+      content="Posteria, Social media, platform, application, app, posts, CSS, Frameworks, Assignment, Tore Hirth, Tore M. Hirth" />
     <meta name="author" content="Tore M. Hirth" />
     <!-- Styles/CSS -->
     <link rel="stylesheet" href="../src/css/styles.css" />
@@ -20,13 +20,13 @@
     <!-- favicon -->
     <link rel="icon" href="../src/assets/logo/favicon.ico" type="image/x-icon" />
     <!-- Page title -->
-    <title>Profile | Posteria</title>
+    <title>Single Post | Posteria</title>
   </head>
   <body class="flex flex-col min-h-full bg-white text-black dark:bg-black dark:text-white">
     <!-- Side navigation -->
-    <aside class="hidden lg:flex w-fit sticky top-0 z-50 bg-transparent">
-      <nav class="flex flex-col h-screen absolute">
-        <div class="flex flex-col gap-3 justify-center absolute bottom-0 font-semibold mb-8 pl-1">
+    <aside class="hidden lg:hidden sticky top-0 z-50 bg-transparent">
+      <nav class="flex flex-col absolute">
+        <div class="flex flex-col gap-3 items-start justify-center h-screen my-auto font-semibold pl-1">
           <!-- Feed -->
           <a
             href="../feed/index.html"
@@ -105,23 +105,22 @@
           </a>
           <!-- profile -->
           <a
-            href="#"
+            href="../profile/index.html"
             aria-label="Profile button"
-            class="flex text-sm items-center lg:w-fit lg:ml-5 xl:w-full gap-1 xl:gap-4 py-2 xl:px-5 xl:ml-0 rounded-lg transition xl:bg-gray-300 dark:xl:bg-darkGray cursor-default"
+            class="flex text-sm items-center lg:w-fit lg:ml-5 xl:w-full gap-4 py-2 xl:px-5 xl:ml-0 rounded-lg transition xl:hover:bg-eden-400 xl:hover:shadow-md xl:hover:dark:text-black xl:active:ring-2 xl:ring-eden-400"
             ><svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              class="size-7 dark:stroke-eden-500 cursor-default">
+              class="size-7 lg:hover:stroke-2 lg:active:stroke-1 dark:lg:hover:stroke-eden-400 dark:xl:hover:stroke-black">
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
             </svg>
             <span class="hidden xl:block">Profile</span>
-            <span class="ml-2 w-2 h-2 border-4 border-eden-400 rounded-full"></span>
           </a>
           <!-- Theme toggle -->
           <button
@@ -185,9 +184,9 @@
     <!-- Banner -->
     <header>
       <!-- hidden header nav -->
-      <div class="hidden flex items-center justify-start gap-6 px-3 pt-2 xs:max-w-xl lg:hidden mx-auto">
+      <div class="flex items-center justify-between gap-6 px-3 xs:max-w-xxl lg:hidden">
         <!-- logo -->
-        <a href="#" aria-label="to top button"
+        <a href="/feed/index.html" aria-label="to top button"
           ><svg
             aria-label="Posteria logo"
             width="41"
@@ -202,249 +201,172 @@
               fill="currentColor" />
           </svg>
         </a>
-        <!-- search bar -->
-        <div
-          class="flex w-full items-center px-4 py-1 rounded-lg bg-gray-200 dark:bg-darkGray peer focus-within:bg-black focus-within:ring-1 ring-eden-400 dark:focus-within:bg-opacity-20">
-          <label for="feed-search"
-            ><svg
+        <div class="flex items-center gap-6">
+          <!-- Theme toggle -->
+          <button
+            type="button"
+            id="header-theme-toggle-btn"
+            aria-label="theme toggle button"
+            class="flex text-sm justify-end items-center w-fit my-2 rounded-lg transition">
+            <svg
+              id="header-dark-mode-icon"
+              aria-label="Dark mode icon"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              class="size-6 opacity-70 dark:opacity-70">
+              class="size-6 lg:hover:stroke-2 lg:active:stroke-1 dark:lg:hover:stroke-eden-400 dark:xl:hover:stroke-black">
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
             </svg>
-          </label>
-          <input
-            type="search"
-            id="feed-search"
-            class="w-full pl-4 appearance-none bg-transparent autofill:-black border-none outline-none placeholder:text-black dark:placeholder-white placeholder:text-opacity-50 dark:placeholder-opacity-50 focus:py-2 transition-all"
-            placeholder="Search" />
+            <svg
+              id="header-light-mode-icon"
+              aria-label="Light mode icon"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="hidden size-6 lg:hover:stroke-2 lg:active:stroke-1 dark:lg:hover:stroke-eden-400 dark:xl:hover:stroke-black">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+            </svg>
+          </button>
+          <!-- Log out button -->
+          <a
+            id="log-out-btn"
+            href="../index.html"
+            aria-label="Notifications button"
+            class="flex text-sm items-center lg:w-fit lg:ml-5 xl:w-full gap-4 py-2 xl:px-5 xl:ml-0 rounded-lg transition xl:hover:bg-eden-400 xl:hover:shadow-md xl:hover:dark:text-black xl:active:ring-2 xl:ring-eden-400">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6 lg:hover:stroke-2 lg:active:stroke-1 dark:lg:hover:stroke-eden-400 dark:xl:hover:stroke-black">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15" />
+            </svg>
+            <span class="hidden xl:block">Log out</span>
+          </a>
         </div>
-        <!-- Theme toggle -->
-        <button
-          type="button"
-          id="header-theme-toggle-btn"
-          aria-label="theme toggle button"
-          class="flex text-sm justify-end items-center w-fit my-2 rounded-lg transition">
-          <svg
-            id="header-dark-mode-icon"
-            aria-label="Dark mode icon"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="size-6 lg:hover:stroke-2 lg:active:stroke-1 dark:lg:hover:stroke-eden-400 dark:xl:hover:stroke-black">
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
-          </svg>
-          <svg
-            id="header-light-mode-icon"
-            aria-label="Light mode icon"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="hidden size-6 lg:hover:stroke-2 lg:active:stroke-1 dark:lg:hover:stroke-eden-400 dark:xl:hover:stroke-black">
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
-          </svg>
-        </button>
       </div>
-      <!-- Banner image -->
-      <div class="w-full h-32 xs:h-36 sm:h-44 md:h-52">
-        <img id="profile-banner" class="w-full h-full object-cover" src="" alt="" />
+      <!-- Back button -->
+      <div id="back-btn-wrapper" class="flex lg:flex w-fit items-center px-3 py-2 mt-4">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
+        </svg>
+        <button class="py-1 px-3">Go back</button>
       </div>
     </header>
-    <main>
-      <!-- ---------------------- -->
-      <!-- profile info section -->
-      <!-- ---------------------- -->
-      <section class="border-t-4 border-darkGray dark:border-eden-500 px-3">
-        <div class="flex flex-col -mt-14 sm:-mt-20 mb-4 items-center">
-          <img
-            id="profile-image"
-            class="w-28 h-28 sm:w-40 sm:h-40 sm:mb-4 object-cover rounded-full mb-1 border-4 border-darkGray dark:border-eden-500"
-            src=""
-            alt="" />
-          <h1 id="profile-name" class="capitalize text-2xl font-semibold"></h1>
-          <p id="profile-bio" class="font-light"></p>
-        </div>
-        <div class="flex gap-4 justify-center items-center mb-8">
-          <button class="posts flex flex-col items-center text-sm">
-            <p id="number-posts"></p>
-            <p>Posts</p>
-          </button>
-          <button class="followers flex flex-col items-center text-sm">
-            <p id="number-followers"></p>
-            <p>Followers</p>
-          </button>
-          <button class="following flex flex-col items-center text-sm">
-            <p id="number-following"></p>
-            <p>Following</p>
-          </button>
-        </div>
-      </section>
-      <!-- ---------------------- -->
-      <!-- posts/followers/following tabs -->
-      <!-- ---------------------- -->
-      <section class="px-3 sticky top-0 bg-white dark:bg-black py-2 -my-2 z-40">
-        <div class="flex justify-between font-semibold max-w-xl mx-auto">
-          <button id="posts-tab-btn" class="posts text-center w-1/3 pb-1 pt-active">Posts</button>
-          <button id="followers-tab-btn" class="followers text-center w-1/3 pb-1">Followers</button>
-          <button id="following-tab-btn" class="following text-center w-1/3 pb-1">Following</button>
-        </div>
-      </section>
-      <!-- ---------------------- -->
-      <!-- posts/followers/following section -->
-      <!-- ---------------------- -->
-      <div class="px-3 max-w-xl mx-auto">
-        <!-- ---------------------- -->
-        <!-- posts section -->
-        <!-- ---------------------- -->
-        <!-- <div id="posts" class="flex flex-col mt-4 max-w-xl mx-auto"> -->
-        <div id="posts" class="flex flex-col gap-1 pt-14 pb-4 -mt-10 justify-center transition-all">
-          <!-- ---------------------- -->
-          <!-- post -->
-          <!-- ---------------------- -->
-          <!-- loader -->
-          <div id="loader" class="text-center">
-            <div role="status">
-              <svg
-                aria-hidden="true"
-                class="inline w-20 h-20 text-eden-100 animate-spin dark:text-eden-100 fill-eden-400"
-                viewBox="0 0 100 101"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
-                  fill="currentColor" />
-                <path
-                  d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
-                  fill="currentFill" />
-              </svg>
-              <span class="sr-only">Loading...</span>
-            </div>
+    <main class="flex flex-col justify-center px-3">
+      <div
+        id="edit-modal-container"
+        class="hidden fixed inset-0 z-50 bg-black bg-opacity-95 flex items-center justify-center">
+        <!-- Edit post  -->
+        <section class="px-3 w-full">
+          <!-- Edit post modal -->
+          <div class="flex flex-col gap-4 mt-4 max-w-xl mx-auto">
+            <label id="edit-label" for="post-title" class="text-center text-3xl font-semibold"
+              >Edit post</label
+            >
+            <div id="message-container"></div>
+            <!-- Form -->
+            <form id="edit-post-form" enctype="multipart/form-data" class="flex flex-col gap-4 h-full">
+              <!-- Fieldset -->
+              <fieldset class="flex flex-col gap-4">
+                <div class="border border-black dark:border-white rounded-lg focus-within:border-eden-400">
+                  <input
+                    type="text"
+                    name="title"
+                    id="post-title"
+                    placeholder="Title"
+                    required
+                    minlength="3"
+                    class="appearance-none outline-none pt-3 px-3 bg-transparent w-full h-10 placeholder:text-gray-600 dark:placeholder:text-gray-400" />
+                  <!-- Bottom Border -->
+                  <div
+                    aria-hidden="true"
+                    class="w-full mt-2 border-b border-black border-opacity-10 dark:border-white dark:border-opacity-10"></div>
+                  <textarea
+                    name="body"
+                    id="post-body"
+                    placeholder="Body text"
+                    class="appearance-none outline-none pt-3 px-3 bg-transparent w-full placeholder:text-gray-600 dark:placeholder:text-gray-400 h-96"></textarea>
+                  <!-- Image Upload Button -->
+                  <div class="flex items-center">
+                    <input
+                      type="url"
+                      name="media"
+                      id="post-image"
+                      placeholder="Image URL"
+                      pattern="https://.*"
+                      class="appearance-none outline-none pt-3 px-3 bg-transparent w-full h-fit text-sm placeholder:text-gray-600 dark:placeholder:text-gray-400" />
+                    <label
+                      for="post-image"
+                      aria-label="add image URL"
+                      class="inline-block w-fit h-fit cursor-pointer">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="size-7 mx-2 my-2 w-fit cursor-pointer hover:scale-90">
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+                      </svg>
+                    </label>
+                  </div>
+                </div>
+                <!-- Submit Button -->
+                <button id="submit-btn" type="submit" class="primary-btn w-fit px-6">Save changes</button>
+              </fieldset>
+            </form>
           </div>
-          <!-- loader -->
-        </div>
-        <div id="info-message" class=""></div>
-        <!-- ----------------- -->
-        <!-- Followers section -->
-        <div
-          id="followers"
-          class="hidden flex flex-col gap-4 pt-14 pb-4 -mt-10 justify-center transition-all">
-          <div
-            class="flex justify-center items-center px-4 py-2 rounded-lg bg-gray-200 dark:bg-darkGray focus-within:bg-gray-300 dark:focus-within:bg-opacity-20">
-            <label for="followers-search"
-              ><svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="size-6 opacity-70 dark:opacity-70">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-              </svg>
-            </label>
-            <input
-              type="search"
-              id="followers-search"
-              class="w-full py-1 pl-4 bg-transparent border-none outline-none placeholder:text-black dark:placeholder-white placeholder:text-opacity-50 dark:placeholder-opacity-50"
-              placeholder="Search" />
-          </div>
-          <div id="followers-wrapper" class="flex flex-col gap-3 pb-4">
-            <a href="#" class="flex gap-2 items-center w-fit">
-              <img
-                class="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover"
-                src="../src/assets/images/profile/autumn-goodman-vTL_qy03D1I-unsplash.webp"
-                alt="Profile image" />
-              <div class="flex flex-col">
-                <p class="text-sm">Jane Smith</p>
-              </div>
-            </a>
-            <a href="#" class="flex gap-2 items-center w-fit">
-              <img
-                class="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover"
-                src="../src/assets/images/profile/autumn-goodman-vTL_qy03D1I-unsplash.webp"
-                alt="Profile image" />
-              <div class="flex flex-col">
-                <p class="text-sm">Jane Smith</p>
-              </div>
-            </a>
-          </div>
-        </div>
-        <!-- ------------------- -->
-        <!-- Followings section -->
-        <div
-          id="following"
-          class="hidden flex flex-col gap-4 pt-14 pb-4 -mt-10 justify-center transition-all">
-          <div
-            class="flex justify-center items-center px-4 py-2 rounded-lg bg-gray-200 dark:bg-darkGray focus-within:bg-gray-300 dark:focus-within:bg-opacity-20">
-            <label for="followers-search"
-              ><svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="size-6 opacity-70 dark:opacity-70">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-              </svg>
-            </label>
-            <input
-              type="search"
-              id="followers-search"
-              class="w-full py-1 pl-4 bg-transparent border-none outline-none placeholder:text-black dark:placeholder-white placeholder:text-opacity-50 dark:placeholder-opacity-50"
-              placeholder="Search" />
-          </div>
-          <div id="following-wrapper" class="flex flex-col gap-3 pb-4">
-            <a href="#" class="flex gap-2 items-center w-fit">
-              <img
-                class="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover"
-                src="../src/assets/images/profile/autumn-goodman-vTL_qy03D1I-unsplash.webp"
-                alt="Profile image" />
-              <div class="flex flex-col">
-                <p class="text-sm">Jane Smith</p>
-              </div>
-            </a>
-            <a href="#" class="flex gap-2 items-center w-fit">
-              <img
-                class="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover"
-                src="../src/assets/images/profile/autumn-goodman-vTL_qy03D1I-unsplash.webp"
-                alt="Profile image" />
-              <div class="flex flex-col">
-                <p class="text-sm">Jane Smith</p>
-              </div>
-            </a>
-            <a href="#" class="flex gap-2 items-center w-fit">
-              <img
-                class="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover"
-                src="../src/assets/images/profile/autumn-goodman-vTL_qy03D1I-unsplash.webp"
-                alt="Profile image" />
-              <div class="flex flex-col">
-                <p class="text-sm">Jane Smith</p>
-              </div>
-            </a>
-          </div>
-        </div>
+        </section>
       </div>
+      <!-- Info message -->
+      <div id="info-message" class="w-full max-w-2xl mx-auto z-50"></div>
+      <section id="post-container">
+        <!-- loader -->
+        <div id="loader" class="text-center w-full">
+          <div role="status">
+            <svg
+              aria-hidden="true"
+              class="inline w-20 h-20 text-eden-100 animate-spin dark:text-eden-100 fill-eden-400"
+              viewBox="0 0 100 101"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                fill="currentColor" />
+              <path
+                d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                fill="currentFill" />
+            </svg>
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+        <!-- /loader -->
+        <!-- Main post container dynamically displayed here -->
+      </section>
     </main>
     <footer class="sticky bottom-0 rounded-t-lg bg-darkGray text-white mt-auto">
       <nav class="flex justify-around items-center px-3 py-1 lg:hidden">
@@ -509,7 +431,7 @@
           </svg>
         </a>
         <!-- profile -->
-        <a href="#" aria-label="Profile button" class="text-eden-400"
+        <a href="../profile/index.html" aria-label="Profile button" class="text-white"
           ><svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
