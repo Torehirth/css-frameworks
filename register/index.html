@@ -8,21 +8,19 @@
     <!-- SEO meta tags -->
     <meta
       name="description"
-      content="Log in to your Posteria account to share posts, follow friends, and explore the latest updates from your network." />
-    <meta
-      name="keywords"
-      content="Posteria, Social media, platform, application, CSS, login, log in, Tore Hirth, Tore M. Hirth" />
+      content="Join Posteria today! Create an account to share posts, connect with others, and explore a social feed designed for engagement." />
+    <meta name="keywords" content="posteria, social media, platform, application, register, user" />
     <meta name="author" content="Tore M. Hirth" />
     <!-- Styles/CSS -->
-    <link rel="stylesheet" href="./src/css/styles.css" />
+    <link rel="stylesheet" href="../src/css/styles.css" />
     <!-- JavaScript/Script -->
-    <script type="module" src="./src/js/app.mjs"></script>
+    <script type="module" src="../src/js/app.mjs"></script>
     <!-- favicon -->
-    <link rel="icon" href="./src/assets/logo/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="../src/assets/logo/favicon.ico" type="image/x-icon" />
     <!-- Page title -->
-    <title>Log in | Posteria</title>
+    <title>Register | Posteria</title>
   </head>
-  <body class="bg-white text-black dark:bg-black dark:text-white px-3">
+  <body class="bg-white text-black dark:bg-black dark:text-white h-screen px-3">
     <aside class="hidden lg:hidden sticky top-0 z-50 bg-transparent">
       <nav class="flex flex-col absolute">
         <div class="flex flex-col gap-3 items-start justify-center h-screen my-auto font-semibold pl-1">
@@ -200,7 +198,7 @@
       </div>
     </header>
     <main class="flex flex-col items-center mb-4 mt-12 max-w-sm mx-auto gap-8">
-      <div class="flex flex-col justify-center items-center gap-8">
+      <div class="flex flex-col justify-center items-center">
         <div class="flex justify-center items-center w-full h-24">
           <svg
             aria-label="Posteria logo"
@@ -230,11 +228,26 @@
         </div>
       </div>
       <section class="w-full flex flex-col gap-4">
-        <h1 class="text-2xl font-semibold text-center">Log in to to your account</h1>
+        <h1 class="text-2xl font-semibold text-center">Create new account</h1>
         <div id="info-message"></div>
-        <form id="login-form" class="flex flex-col gap-4 w-full">
+        <form id="register-form" class="flex flex-col gap-4 w-full">
           <fieldset class="flex flex-col gap-4">
-            <legend class="text-center text-sm pb-4">Fill in your details in the form below to log in</legend>
+            <legend class="text-center text-sm pb-4">Fill in your details to register a new account</legend>
+            <div class="flex flex-col gap-1">
+              <label for="user-name" class="text-sm">User name *</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Name"
+                maxlength="20"
+                pattern="[A-Za-z0-9_]+"
+                title="Only letters, numbers, and underscores are allowed."
+                aria-describedby="username-desc"
+                class="bg-gray-200 dark:bg-darkGray py-2 px-4 rounded-md placeholder:text-black placeholder:opacity-60 dark:placeholder:text-white"
+                required />
+              <p id="username-desc" class="hidden">Only letters, numbers, and underscores (_) are allowed.</p>
+            </div>
             <div class="flex flex-col gap-1">
               <label for="email" class="text-sm">Email *</label>
               <input
@@ -244,8 +257,12 @@
                 name="email"
                 placeholder="Email"
                 pattern="^[^@]+@(stud\.|)(noroff\.no)$"
-                title="Only @noroff.no or @stud.noroff.no email addresses are allowed"
+                title="Please enter a valid Noroff email address (ending with @noroff.no or @stud.noroff.no)."
+                aria-describedby="email-desc"
                 required />
+              <p id="email-desc" class="hidden">
+                Please enter a valid Noroff email address (ending with @noroff.no or @stud.noroff.no).
+              </p>
             </div>
             <div class="flex flex-col gap-1">
               <label for="password" class="text-sm">Password *</label>
@@ -257,23 +274,23 @@
                 placeholder="Password"
                 minlength="8"
                 title="Password must be at least 8 characters long"
+                aria-describedby="password-desc"
                 required />
+              <p id="password-desc" class="hidden">Password must be at least 8 characters long</p>
             </div>
             <button
               aria-label="register button"
               type="submit"
               class="py-2 px-5 bg-eden-400 text-black font-semibold rounded-md shadow-md hover:bg-eden-300 transition focus:outline-offset-2 focus:ring focus:ring-eden-500 focus:ring-opacity-75">
-              Log in
+              Create account
             </button>
           </fieldset>
         </form>
       </section>
       <div>
-        <p class="text-center mt-4">
-          Don't have an account yet?
-          <a href="./register/index.html" class="text-primary font-semibold underline dark:text-eden-400"
-            >Sign up</a
-          >
+        <p class="text-center lg:mt-4">
+          Already have an account?
+          <a href="../index.html" class="text-primary font-semibold underline dark:text-eden-400">Log in</a>
         </p>
       </div>
     </main>

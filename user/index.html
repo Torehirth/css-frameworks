@@ -8,7 +8,7 @@
     <!-- SEO meta tags -->
     <meta
       name="description"
-      content="Discover fresh posts, follow friends, and engage with the community on Posteria’s interactive social feed." />
+      content="Explore profiles on Posteria! Check out posts, followers, and updates from other users in the community." />
     <meta
       name="keywords"
       content="Posteria, Social media, platform, application, CSS, Frameworks, Assignment, Tore Hirth, Tore M. Hirth" />
@@ -20,59 +20,33 @@
     <!-- favicon -->
     <link rel="icon" href="../src/assets/logo/favicon.ico" type="image/x-icon" />
     <!-- Page title -->
-    <title>Feed | Posteria</title>
+    <title>User | Posteria</title>
   </head>
   <body class="flex flex-col min-h-full bg-white text-black dark:bg-black dark:text-white">
-    <!-- Desktop aside menu -->
-    <aside class="hidden lg:flex sticky top-0 z-50 bg-transparent">
-      <nav class="flex flex-col absolute">
-        <div class="flex flex-col gap-3 items-start justify-center h-screen my-auto font-semibold pl-1">
-          <!-- search button -->
-          <button
-            id="aside-search-btn"
-            class="w-full rounded-lg transition xl:hover:bg-eden-400 xl:hover:shadow-md xl:hover:dark:text-black xl:active:ring-2 xl:ring-eden-400">
-            <label
-              id="aside-search-button"
-              for="aside-feed-search"
-              class="cursor-pointer flex text-sm items-center lg:w-fit lg:ml-5 xl:w-full gap-4 py-2 xl:px-5 xl:ml-0">
-              <span for="aside-feed-search"
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="size-7 cursor-pointer lg:hover:stroke-2 lg:active:stroke-1 dark:lg:hover:stroke-eden-400 dark:xl:hover:stroke-black">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-                </svg>
-              </span>
-              <span for="aside-feed-search" class="hidden xl:block cursor-pointer">Search</span>
-            </label>
-          </button>
-          <!-- Feed button -->
+    <!-- Side navigation -->
+    <aside class="hidden lg:flex w-fit sticky top-0 z-50 bg-transparent">
+      <nav class="flex flex-col h-screen absolute">
+        <div class="flex flex-col gap-3 justify-center absolute bottom-0 font-semibold mb-8 pl-1">
+          <!-- Feed -->
           <a
-            href="#"
+            href="../feed/index.html"
             aria-label="Feed/home button"
-            class="flex text-sm items-center lg:w-fit lg:ml-5 xl:w-full gap-1 xl:gap-4 py-2 xl:px-5 xl:ml-0 rounded-lg transition xl:bg-gray-300 dark:xl:bg-darkGray">
-            <svg
+            class="flex text-sm items-center lg:w-fit lg:ml-5 xl:w-full gap-4 py-2 xl:px-5 xl:ml-0 rounded-lg transition xl:hover:bg-eden-400 xl:hover:shadow-md xl:hover:dark:text-black xl:active:ring-2 xl:ring-eden-400"
+            ><svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              class="size-7 dark:stroke-eden-500">
+              class="size-7 lg:hover:stroke-2 lg:active:stroke-1 dark:lg:hover:stroke-eden-400 dark:xl:hover:stroke-black">
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
             </svg>
             <span class="hidden xl:block">Feed</span>
-            <span class="ml-2 w-2 h-2 border-4 border-eden-400 rounded-full"></span>
           </a>
-          <!-- messages/inbox button -->
+          <!-- messages/inbox -->
           <a
             href="#"
             aria-label="Messages button"
@@ -91,12 +65,12 @@
             </svg>
             <span class="hidden xl:block">Messages</span>
           </a>
-          <!-- plus/new post button -->
-          <button
-            for="post-title"
+          <!-- plus/new post -->
+          <a
+            href="#"
             aria-label="New post button"
-            class="new-post-btn new-post-btn flex text-sm items-center lg:w-fit lg:ml-5 xl:w-full gap-4 py-2 xl:px-5 xl:ml-0 rounded-lg transition xl:hover:bg-eden-400 xl:hover:shadow-md xl:hover:dark:text-black xl:active:ring-2 xl:ring-eden-400">
-            <svg
+            class="new-post-btn flex text-sm items-center lg:w-fit lg:ml-5 xl:w-full gap-4 py-2 xl:px-5 xl:ml-0 rounded-lg transition xl:hover:bg-eden-400 xl:hover:shadow-md xl:hover:dark:text-black xl:active:ring-2 xl:ring-eden-400"
+            ><svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -108,12 +82,9 @@
                 stroke-linejoin="round"
                 d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
             </svg>
-            <span class="hidden xl:block" for="post-title">New post</span>
-            <span
-              id="active-round-dot"
-              class="hidden -ml-1 w-2 h-2 border-4 border-eden-400 rounded-full"></span>
-          </button>
-          <!-- notifications button -->
+            <span class="hidden xl:block">New post</span>
+          </a>
+          <!-- notifications -->
           <a
             href="#"
             aria-label="Notifications button"
@@ -132,11 +103,11 @@
             </svg>
             <span class="hidden xl:block">Notifications</span>
           </a>
-          <!-- profile button -->
+          <!-- profile -->
           <a
-            href="../profile/index.html"
+            href="/profile/index.html"
             aria-label="Profile button"
-            class="flex text-sm items-center lg:w-fit lg:ml-5 xl:w-full gap-4 py-2 xl:px-5 xl:ml-0 rounded-lg transition xl:hover:bg-eden-400 xl:hover:shadow-md xl:hover:dark:text-black xl:active:ring-2 xl:ring-eden-400"
+            class="flex text-sm items-center lg:w-fit lg:ml-5 xl:w-full gap-1 xl:gap-4 py-2 xl:px-5 xl:ml-0 rounded-lg transition xl:hover:bg-eden-400 xl:hover:shadow-md xl:hover:dark:text-black xl:active:ring-2 xl:ring-eden-400"
             ><svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -151,7 +122,7 @@
             </svg>
             <span class="hidden xl:block">Profile</span>
           </a>
-          <!-- Theme toggle button -->
+          <!-- Theme toggle -->
           <button
             type="button"
             id="theme-toggle-btn"
@@ -210,11 +181,12 @@
         </div>
       </nav>
     </aside>
-    <!-- mobile header -->
-    <header class="sticky top-0 bg-black z-50">
-      <div class="flex items-center justify-start gap-6 px-3 py-1 xs:max-w-xl lg:hidden mx-auto">
+    <!-- Banner -->
+    <header>
+      <!-- hidden header nav -->
+      <div class="hidden flex items-center justify-start gap-6 px-3 pt-2 xs:max-w-xl lg:hidden mx-auto">
         <!-- logo -->
-        <a href="#" aria-label="Home/feed button"
+        <a href="#" aria-label="to top button"
           ><svg
             aria-label="Posteria logo"
             width="41"
@@ -223,24 +195,15 @@
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             class="size-8 opacity-80">
-            <rect
-              x="1.5"
-              y="1"
-              width="38"
-              height="38"
-              rx="19"
-              stroke="currentColor"
-              stroke-width="2"
-              class="stroke-white" />
+            <rect x="1.5" y="1" width="38" height="38" rx="19" stroke="currentColor" stroke-width="2" />
             <path
               d="M11.38 30V13.744L11.06 11.152H25.876C27.3053 11.152 28.4467 11.312 29.3 11.632C30.1747 11.9307 30.8253 12.3467 31.252 12.88C31.7 13.392 31.988 14 32.116 14.704C32.2653 15.3867 32.34 16.112 32.34 16.88V19.408C32.34 20.432 32.1693 21.3813 31.828 22.256C31.508 23.1093 30.9 23.8027 30.004 24.336C29.1293 24.848 27.86 25.104 26.196 25.104H23.988C22.644 25.104 21.3853 25.072 20.212 25.008C19.06 24.944 18.196 24.8907 17.62 24.848V30H11.38ZM17.62 20.752H24.244C24.948 20.752 25.4387 20.6133 25.716 20.336C25.9933 20.0587 26.132 19.6107 26.132 18.992V17.36C26.132 16.7413 26.004 16.2933 25.748 16.016C25.492 15.7173 25.0013 15.568 24.276 15.568H17.62V20.752Z"
-              fill="currentColor"
-              class="fill-white" />
+              fill="currentColor" />
           </svg>
         </a>
         <!-- search bar -->
         <div
-          class="flex w-full items-center px-4 py-1 rounded-lg bg-gray-200 dark:bg-darkGray focus-within:bg-black focus-within:ring-1 ring-eden-400 dark:focus-within:bg-opacity-20">
+          class="flex w-full items-center px-4 py-1 rounded-lg bg-gray-200 dark:bg-darkGray peer focus-within:bg-black focus-within:ring-1 ring-eden-400 dark:focus-within:bg-opacity-20">
           <label for="feed-search"
             ><svg
               xmlns="http://www.w3.org/2000/svg"
@@ -258,8 +221,7 @@
           <input
             type="search"
             id="feed-search"
-            name="feed-search"
-            class="w-full pl-4 appearance-none bg-transparent autofill:-black border-none outline-none placeholder:text-black dark:placeholder-white placeholder:text-opacity-50 dark:placeholder-opacity-50 focus:py-1 transition-all"
+            class="w-full pl-4 appearance-none bg-transparent autofill:-black border-none outline-none placeholder:text-black dark:placeholder-white placeholder:text-opacity-50 dark:placeholder-opacity-50 focus:py-2 transition-all"
             placeholder="Search" />
         </div>
         <!-- Theme toggle -->
@@ -276,7 +238,7 @@
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="size-6 stroke-white lg:hover:stroke-2 lg:active:stroke-1 dark:lg:hover:stroke-eden-400 dark:xl:hover:stroke-black">
+            class="size-6 lg:hover:stroke-2 lg:active:stroke-1 dark:lg:hover:stroke-eden-400 dark:xl:hover:stroke-black">
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -297,212 +259,195 @@
               d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
           </svg>
         </button>
-        <!-- Log out button -->
-        <a
-          id="log-out-btn-mobile"
-          href="../index.html"
-          aria-label="Log out"
-          class="flex text-sm justify-end items-center w-fit my-2 rounded-lg transition">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="size-6 stroke-white lg:hover:stroke-2 lg:active:stroke-1 dark:lg:hover:stroke-eden-400 dark:xl:hover:stroke-black">
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15" />
-          </svg>
-        </a>
+      </div>
+      <!-- Banner image -->
+      <div class="w-full h-32 xs:h-36 sm:h-44 md:h-52">
+        <img
+          id="profile-banner"
+          class="w-full h-full object-cover"
+          src="../src/assets/images/banner/steve-doig-tOgc0Gjj_8E-unsplash.webp"
+          alt="banner with green and yellow flowers" />
       </div>
     </header>
     <main>
-      <!-- Searchbar container -->
-      <div class="hidden lg:block">
+      <!-- ---------------------- -->
+      <!-- profile info section -->
+      <!-- ---------------------- -->
+      <section class="border-t-4 border-darkGray dark:border-eden-500 px-3">
+        <div class="flex flex-col -mt-14 sm:-mt-20 items-center">
+          <img
+            id="profile-image"
+            class="w-28 h-28 sm:w-40 sm:h-40 sm:mb-4 object-cover rounded-full mb-1 border-4 border-darkGray dark:border-eden-500"
+            src=""
+            alt="" />
+          <h1 id="profile-name" class="capitalize text-2xl font-semibold"></h1>
+          <p id="profile-bio" class="font-light"></p>
+        </div>
+        <div class="flex justify-center gap-4 my-4">
+          <a href="#" class="secondary-btn">Message</a>
+          <a href="#" class="primary-btn">&plus;Follow</a>
+        </div>
+        <div class="flex gap-4 justify-center items-center mb-8">
+          <button class="posts flex flex-col items-center text-sm">
+            <p id="number-posts"></p>
+            <p>Posts</p>
+          </button>
+          <button class="followers flex flex-col items-center text-sm">
+            <p id="number-followers"></p>
+            <p>Followers</p>
+          </button>
+          <button class="following flex flex-col items-center text-sm">
+            <p id="number-following"></p>
+            <p>Following</p>
+          </button>
+        </div>
+      </section>
+      <!-- ---------------------- -->
+      <!-- posts/followers/following tabs -->
+      <!-- ---------------------- -->
+      <section class="px-3 sticky top-0 bg-white dark:bg-black py-2 -my-2 z-40">
+        <div class="flex justify-between font-semibold max-w-xl mx-auto">
+          <button id="posts-tab-btn" class="posts text-center w-1/3 pb-1 pt-active">Posts</button>
+          <button id="followers-tab-btn" class="followers text-center w-1/3 pb-1">Followers</button>
+          <button id="following-tab-btn" class="following text-center w-1/3 pb-1">Following</button>
+        </div>
+      </section>
+      <!-- ---------------------- -->
+      <!-- posts/followers/following section -->
+      <!-- ---------------------- -->
+      <div class="px-3 max-w-xl mx-auto">
+        <!-- ---------------------- -->
+        <!-- posts section -->
+        <!-- ---------------------- -->
+        <!-- <div id="posts" class="flex flex-col mt-4 max-w-xl mx-auto"> -->
+        <div id="posts" class="flex flex-col gap-1 pt-14 pb-4 -mt-10 justify-center transition-all">
+          <!-- ---------------------- -->
+          <!-- post -->
+          <!-- ---------------------- -->
+          <!-- loader -->
+          <div id="loader" class="text-center">
+            <div role="status">
+              <svg
+                aria-hidden="true"
+                class="inline w-20 h-20 text-eden-100 animate-spin dark:text-eden-100 fill-eden-400"
+                viewBox="0 0 100 101"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                  fill="currentColor" />
+                <path
+                  d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                  fill="currentFill" />
+              </svg>
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
+          <!-- loader -->
+        </div>
+        <div id="info-message"></div>
+        <!-- ----------------- -->
+        <!-- Followers section -->
         <div
-          id="aside-feed-search-container"
-          class="hidden flex-col justify-center transition-all max-w-xl mx-auto mt-2 px-4 py-1 rounded-lg focus-within:bg-black focus-within:ring ring-eden-400 focus-within:bg-transparent">
-          <input
-            type="search"
-            id="aside-feed-search"
-            class="w-full pl-4 appearance-none bg-transparent border-none outline-none placeholder:text-black dark:placeholder-white placeholder:text-opacity-50 dark:placeholder-opacity-50 focus:py-1 transition-all hidden"
-            placeholder="Search" />
-          <div id="info-message" class="hidden items-center justify-center mt-3 rounded-lg border-none"></div>
-        </div>
-      </div>
-      <!-- create post  -->
-      <section id="create-post-section" class="px-3">
-        <div class="flex flex-col gap-4 mt-4 max-w-xl mx-auto">
-          <label for="post-title" class="text-center text-lg font-semibold">Create new post</label>
-          <div id="info-message"></div>
-          <!-- Form -->
-          <form id="create-post-form" enctype="multipart/form-data" class="flex flex-col gap-4 h-full">
-            <!-- Fieldset -->
-            <fieldset class="flex flex-col gap-4">
-              <div class="border border-black dark:border-white rounded-lg focus-within:border-eden-400">
-                <input
-                  type="text"
-                  name="title"
-                  id="post-title"
-                  placeholder="Title"
-                  required
-                  minlength="3"
-                  class="appearance-none outline-none pt-3 px-3 bg-transparent w-full h-10 placeholder:text-gray-600 dark:placeholder:text-gray-400" />
-                <!-- Bottom Border -->
-                <div
-                  aria-hidden="true"
-                  class="w-full mt-2 border-b border-black border-opacity-10 dark:border-white dark:border-opacity-10"></div>
-                <textarea
-                  name="body"
-                  id="post-body"
-                  placeholder="What's on your mind?"
-                  class="appearance-none outline-none pt-3 px-3 bg-transparent w-full h-20 placeholder:text-gray-600 dark:placeholder:text-gray-400 focus-within:h-64 sm:focus-within:h-44 lg:focus-within:h-20"></textarea>
-                <!-- Image Upload Button -->
-                <div class="flex items-center">
-                  <input
-                    type="url"
-                    name="media"
-                    id="post-image"
-                    placeholder="Add image URL.."
-                    pattern="https://.*"
-                    class="appearance-none outline-none pt-3 px-3 bg-transparent w-full h-fit text-sm placeholder:text-gray-600 dark:placeholder:text-gray-400" />
-                  <label
-                    for="post-image"
-                    aria-label="add image URL"
-                    class="inline-block w-fit h-fit cursor-pointer">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="1.5"
-                      stroke="currentColor"
-                      class="size-7 mx-2 my-2 w-fit cursor-pointer hover:scale-90">
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
-                    </svg>
-                  </label>
-                </div>
-              </div>
-              <!-- Submit Button -->
-              <button type="submit" class="primary-btn w-fit px-6">Publish</button>
-            </fieldset>
-          </form>
-          <!-- Bottom Border -->
+          id="followers"
+          class="hidden flex flex-col gap-4 pt-14 pb-4 -mt-10 justify-center transition-all">
           <div
-            aria-hidden="true"
-            class="w-full mt-2 border-b border-black border-opacity-10 dark:border-white dark:border-opacity-10"></div>
-        </div>
-      </section>
-      <!-- Headline, sort/filter container -->
-      <div class="px-3 mt-4">
-        <div class="flex flex-col justify-end max-w-xl mx-auto">
-          <div class="flex justify-between items-center">
-            <!-- Personal tag button -->
-            <button
-              id="personal-tag-btn"
-              class="flex justify-center items-center py-1 px-3 bg-gray-300 text-black dark:bg-darkGray dark:text-white text-sm font-semibold rounded-md shadow-md hover:opacity-70 transition">
-              Filter by my tag
-            </button>
-            <h1 class="text-2xl font-semibold">Feed</h1>
-            <div class="flex gap-2 items-center">
-              <span class="text-sm hidden lg:block">Sort</span>
-              <button id="sort-dropdown" type="menu" aria-label="Sort posts">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="size-6 lg:size-7 lg:hover:stroke-2 lg:active:stroke-1 dark:lg:hover:stroke-eden-400 active:scale-90">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
-                </svg>
-              </button>
-            </div>
+            class="flex justify-center items-center px-4 py-2 rounded-lg bg-gray-200 dark:bg-darkGray focus-within:bg-gray-300 dark:focus-within:bg-opacity-20">
+            <label for="followers-search"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6 opacity-70 dark:opacity-70">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+              </svg>
+            </label>
+            <input
+              type="search"
+              id="followers-search"
+              class="w-full py-1 pl-4 bg-transparent border-none outline-none placeholder:text-black dark:placeholder-white placeholder:text-opacity-50 dark:placeholder-opacity-50"
+              placeholder="Search" />
           </div>
-          <!-- Sort dropdown menu -->
-          <div id="sort-menu" class="hidden relative flex flex-col items-end transition-all">
-            <div
-              class="absolute bg-darkGray flex flex-col items-center gap-2 w-40 mt-3 rounded-lg py-2 px-2 text-white text-sm">
-              <!-- Sort by descending -->
-              <button
-                id="descending"
-                class="px-6 py-2 w-full text-center rounded-lg hover:bg-eden-400 hover:text-black active:ring-1 active:ring-eden-400 flex items-center justify-start gap-2">
-                <svg
-                  id="descending-icon"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  aria-hidden="true"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="size-4">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                </svg>
-                <span type="button">Descending</span>
-              </button>
-              <!-- Sort by ascending -->
-              <button
-                id="ascending"
-                class="px-6 py-2 w-full text-center rounded-lg hover:bg-eden-400 hover:text-black active:ring-1 active:ring-eden-400 flex items-center justify-start gap-2">
-                <svg
-                  id="ascending-icon"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  aria-hidden="true"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="size-4 opacity-0">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                </svg>
-                <span type="button">Ascending</span>
-              </button>
-            </div>
+          <div id="followers-wrapper" class="flex flex-col gap-3 pb-4">
+            <a href="#" class="flex gap-2 items-center w-fit">
+              <img
+                class="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover"
+                src="../src/assets/images/profile/autumn-goodman-vTL_qy03D1I-unsplash.webp"
+                alt="Profile image" />
+              <div class="flex flex-col">
+                <p class="text-sm">Jane Smith</p>
+              </div>
+            </a>
+            <a href="#" class="flex gap-2 items-center w-fit">
+              <img
+                class="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover"
+                src="../src/assets/images/profile/autumn-goodman-vTL_qy03D1I-unsplash.webp"
+                alt="Profile image" />
+              <div class="flex flex-col">
+                <p class="text-sm">Jane Smith</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <!-- ------------------- -->
+        <!-- Followings section -->
+        <div
+          id="following"
+          class="hidden flex flex-col gap-4 pt-14 pb-4 -mt-10 justify-center transition-all">
+          <div
+            class="flex justify-center items-center px-4 py-2 rounded-lg bg-gray-200 dark:bg-darkGray focus-within:bg-gray-300 dark:focus-within:bg-opacity-20">
+            <label for="followers-search"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6 opacity-70 dark:opacity-70">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+              </svg>
+            </label>
+            <input
+              type="search"
+              id="followers-search"
+              class="w-full py-1 pl-4 bg-transparent border-none outline-none placeholder:text-black dark:placeholder-white placeholder:text-opacity-50 dark:placeholder-opacity-50"
+              placeholder="Search" />
+          </div>
+          <div id="following-wrapper" class="flex flex-col gap-3 pb-4">
+            <a href="#" class="flex gap-2 items-center w-fit">
+              <img
+                class="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover"
+                src="../src/assets/images/profile/autumn-goodman-vTL_qy03D1I-unsplash.webp"
+                alt="Profile image" />
+              <div class="flex flex-col">
+                <p class="text-sm">Jane Smith</p>
+              </div>
+            </a>
+            <a href="#" class="flex gap-2 items-center w-fit">
+              <img
+                class="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover"
+                src="../src/assets/images/profile/autumn-goodman-vTL_qy03D1I-unsplash.webp"
+                alt="Profile image" />
+              <div class="flex flex-col">
+                <p class="text-sm">Jane Smith</p>
+              </div>
+            </a>
           </div>
         </div>
       </div>
-      <!-- Feed -->
-      <section class="px-3 mt-8">
-        <!-- post -->
-        <div id="feed-posts" class="flex flex-col mt-4 max-w-xl mx-auto">
-          <div id="feed-info-message"></div>
-        </div>
-        <div id="view-more-btn-wrapper" class="hidden flex w-full justify-center">
-          <button id="view-more-btn" class="primary-btn mb-4">View More</button>
-        </div>
-        <!-- loader -->
-        <div id="loader" class="text-center">
-          <div role="status">
-            <svg
-              aria-hidden="true"
-              class="inline w-20 h-20 text-eden-100 animate-spin dark:text-eden-100 fill-eden-400"
-              viewBox="0 0 100 101"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
-                fill="currentColor" />
-              <path
-                d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
-                fill="currentFill" />
-            </svg>
-            <span class="sr-only">Loading...</span>
-          </div>
-        </div>
-        <!-- loader -->
-      </section>
     </main>
     <footer class="sticky bottom-0 rounded-t-lg bg-darkGray text-white mt-auto">
       <nav class="flex justify-around items-center px-3 py-1 lg:hidden">
         <!-- Feed -->
-        <a href="#" aria-label="Feed/home button" class="text-eden-400"
+        <a href="../feed/index.html" aria-label="Feed/home button"
           ><svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -562,7 +507,7 @@
           </svg>
         </a>
         <!-- profile -->
-        <a href="../profile/index.html" aria-label="Profile button"
+        <a href="/profile/index.html" aria-label="Profile button"
           ><svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

@@ -36,11 +36,25 @@
     @apply transition-all hover:stroke-2;
   }
   .pt-active {
-    @apply border-b-2 border-eden-400 transition-all; /* profile tab active */
+    /* profile tab active */
+    @apply border-b-2 border-eden-400 transition-all;
+  }
+  .error {
+    /* Error message */
+    @apply text-sm text-center border-2 border-red-600 rounded text-red-300 p-2;
+  }
+  .success {
+    /* Success message */
+    @apply text-sm text-center border-2 border-green-600 rounded text-green-300 p-2;
+  }
+  .warning {
+    /* Warning message */
+    @apply text-sm text-center border-2 border-yellow-600 rounded text-yellow-300 p-2;
   }
 }
 
 @layer utilities {
+  /* Special form field styling */
   input:-webkit-autofill,
   input:-webkit-autofill:hover,
   input:-webkit-autofill:focus,
